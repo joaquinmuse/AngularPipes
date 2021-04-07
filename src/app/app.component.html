@@ -40,6 +40,61 @@
                     <td>slice :1:5</td>
                     <td>{{arreglo|slice:1:5 }}</td>
                 </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>number:'3.0-0'</td>
+                    <td>{{PI|number:'3.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>number:'.0-2'</td>
+                    <td>{{PI|number:'.0-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{porcentaje}}</td>
+                    <td>percent</td>
+                    <td>{{porcentaje|percent}}</td>
+                </tr>
+                <tr>
+                    <td>{{porcentaje}}</td>
+                    <td>percent:'2.2-2'</td>
+                    <td>{{porcentaje|percent:'2.2-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency:'EUR'</td>
+                    <td>{{salario|currency:'EUR'}}</td>
+                </tr>
+                <tr>
+                    <td>{{valorPromesa}}</td>
+                    <td>async</td>
+                    <td>{{valorPromesa | async}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency:'UYU':'symbol-narrow':'.0-0'</td>
+                    <td>{{salario|currency:'UYU':'symbol-narrow':'.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date</td>
+                    <td>{{fecha|date}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date:'medium'</td>
+                    <td>{{fecha|date:'medium'}}</td>
+                </tr>
+                <br>
+
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date:'medium':'{{idioma}}'</td>
+                    <button (click)="idioma='es-UY'" class="mr-1 btn btn-outline-primary">Español</button>
+                    <button (click)="idioma='en'" class="mr-1 btn btn-outline-secondary">Ingles</button>
+                    <button (click)="idioma='fr'" class="mr-1 btn btn-outline-success">Frances</button>
+                    <td>{{fecha|date:'medium':'':idioma}}</td>
+                </tr>
             </tbody>
         </table>
 
@@ -49,5 +104,14 @@
                 {{item}}
             </li>
         </ul>
+        <h4>JSON</h4>
+        <hr>
+        <div class="row mb-5">
+            <div class="col">
+                <pre>
+                    {{heroe |json}}      
+                </pre>
+            </div>
+        </div>
     </div>
 </div>
