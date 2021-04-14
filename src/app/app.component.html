@@ -12,6 +12,12 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>{{nombre2}}</td>
+                    <td>capitalizado</td>
+                    <td>{{nombre2 | capitalizado:false}}</td>
+                </tr>
+
+                <tr>
                     <td>{{nombre}}</td>
                     <td>uppercase</td>
                     <td>{{nombre|uppercase}}</td>
@@ -95,6 +101,19 @@
                     <button (click)="idioma='fr'" class="mr-1 btn btn-outline-success">Frances</button>
                     <td>{{fecha|date:'medium':'':idioma}}</td>
                 </tr>
+
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>
+                        password:{{activar}}
+                        <br>
+                        <button (click)="activar = !activar" class="btn btn-outline-primary">
+                            Activar/Desactivar
+                        </button>
+                    </td>
+                    <td>{{nombre | password : activar}}</td>
+                </tr>
+
             </tbody>
         </table>
 
@@ -113,5 +132,17 @@
                 </pre>
             </div>
         </div>
+        <div class="row mb-5">
+            <h4>DOM Seguro</h4>
+            <div class="col mb-5">
+                <pre>
+                    <iframe width="560" height="315" [src]="videoUrl|domseguro" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe> 
+                </pre>
+            </div>
+        </div>
+
+
+
     </div>
 </div>
